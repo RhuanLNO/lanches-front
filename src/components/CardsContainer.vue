@@ -38,28 +38,33 @@ watch(() => tab.value, getRestaurants, { immediate: true })
       <v-col v-for="restaurant in restaurants" :key="restaurant.id" sm="12" md="6" lg="4" xl="3" cols="12">
         <v-card class="card">
           <v-card-item>
-            <img :src="restaurant.photo ? restaurant.photo : placeholder" width="100%" class="photo" />
-            <div class="title">{{ restaurant.name }}</div>
             <v-col>
-              <v-row justify="center" class="ga-3">
-                <a :href="restaurant.phone ? 'tel:' + restaurant.phone : undefined">
-                  <v-btn class="ma-2" color="#AC033C">
-                    <v-icon name="md-phone-round" scale="1.15" />
-                  </v-btn>
-                </a>
-                <a :href="restaurant.phone ? 'https://wa.me/' + restaurant.phone : undefined" target="_blank">
-                  <v-btn class="ma-2" color="#AC033C">
-                    <v-icon name="io-logo-whatsapp" scale="1.15" />
-                  </v-btn>     
-                </a>
-                <a :href="restaurant.instagram ? 'https://www.instagram.com/' + restaurant.instagram : undefined" target="_blank">
-                  <v-btn class="ma-2" color="#AC033C">
-                    <v-icon name="io-logo-instagram" scale="1.15" />
-                  </v-btn>
-                </a>
-              </v-row>
+              <img :src="restaurant.photo ? restaurant.photo : placeholder" width="100%" class="photo" />
+              <v-col class="">
+                <div class="title">{{ restaurant.name }}</div>
+                <v-col>
+                  <v-row justify="center" class="ga-3">
+                    <a :href="restaurant.phone ? 'tel:' + restaurant.phone : undefined">
+                      <v-btn class="ma-2" color="#AC033C">
+                        <v-icon name="md-phone-round" scale="1.15" />
+                      </v-btn>
+                    </a>
+                    <a :href="restaurant.phone ? 'https://wa.me/' + restaurant.phone : undefined" target="_blank">
+                      <v-btn class="ma-2" color="#AC033C">
+                        <v-icon name="io-logo-whatsapp" scale="1.15" />
+                      </v-btn>     
+                    </a>
+                    <a :href="restaurant.instagram ? 'https://www.instagram.com/' + restaurant.instagram : undefined" target="_blank">
+                      <v-btn class="ma-2" color="#AC033C">
+                        <v-icon name="io-logo-instagram" scale="1.15" />
+                      </v-btn>
+                    </a>
+                  </v-row>
+                </v-col>
+                <div>Funcionamento: {{ restaurant.businessHours }}</div>         
+              </v-col>
+
             </v-col>
-            <div>Funcionamento: {{ restaurant.businessHours }}</div>
           </v-card-item>
         </v-card>
       </v-col>
@@ -84,6 +89,8 @@ watch(() => tab.value, getRestaurants, { immediate: true })
   border-radius: 10px !important;
   color: #fff !important;
   text-align: center;
+/*   min-height: 550px;
+  max-height: 550px; */
 }
 
 .loader {
@@ -113,7 +120,8 @@ p {
 
 .photo {
   object-fit: cover;
-  max-height: 390px;
+  min-height: 360px;
+  max-height: 360px;
 }
 
 .title {
