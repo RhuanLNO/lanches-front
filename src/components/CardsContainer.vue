@@ -2,11 +2,12 @@
 import { tab } from '../stores/tab'
 import { ref, watch } from 'vue'
 import placeholder from '../assets/mock.jpg'
+import { restaurantsArr } from '../stores/restaurants';
 
-type Category = {
+/* type Category = {
   id: number,
   name: string
-}
+} */
 
 type ApiResponseRestaurant = {
   id: number,
@@ -15,7 +16,8 @@ type ApiResponseRestaurant = {
   instagram: string | null,
   phone: string | null,
   photo: string | null,
-  categories: Array<Category>
+  /* categories: Array<Category> */
+  categories: Array<Number>
 }
 
 const loading = ref(false);
@@ -24,9 +26,11 @@ const restaurants = ref<ApiResponseRestaurant[]>([]);
 const getRestaurants = async () => {
   loading.value = true;
   restaurants.value = [];
-  fetch(`${import.meta.env.VITE_BACK_URL}/restaurants?category=${tab.value}`)
+  const filteredRestaurants: ApiResponseRestaurant[] = restaurantsArr.filter((restaurant) => restaurant.categories.some(category => category === Number(tab.value)));
+  restaurants.value = filteredRestaurants;
+/*   fetch(`${import.meta.env.VITE_BACK_URL}/restaurants?category=${tab.value}`)
     .then(res => res.json())
-    .then(data => { console.log(data); restaurants.value = data.restaurants; loading.value = false })
+    .then(data => { console.log(data); restaurants.value = data.restaurants; loading.value = false }) */
 };
 
 watch(() => tab.value, getRestaurants, { immediate: true })
@@ -69,14 +73,14 @@ watch(() => tab.value, getRestaurants, { immediate: true })
         </v-card>
       </v-col>
     </v-row>
-    <v-col v-if="loading" class="mt-15">
+<!--     <v-col v-if="loading" class="mt-15">
       <v-row justify="center">
         <p>O primeiro carregamento pode demorar um pouco...</p>
       </v-row>
       <v-row justify="center" class="mt-6">
         <span class="loader" />
       </v-row>
-    </v-col>
+    </v-col> -->
     <v-row v-if="restaurants.length === 0 && !loading" class="mt-15" justify="center">
       <p>Sem resultados para exibir</p>
     </v-row>

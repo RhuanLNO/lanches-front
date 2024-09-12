@@ -1,0 +1,27 @@
+{
+"categories": [
+	{
+		"id" : 1,
+		"name" : "Hambúrguer"
+	},
+	{
+		"id" : 2,
+		"name" : "Asiática"
+	},
+	{
+		"id" : 3,
+		"name" : "Sanduíches"
+	},
+	{
+		"id" : 4,
+		"name" : "Sobremesas"
+	},
+	{
+		"id" : 5,
+		"name" : "Fitness"
+	},
+	{
+		"id" : 6,
+		"name" : "Pizza"
+	}
+]}

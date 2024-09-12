@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import { tab } from '../stores/tab.ts'
 
-const test = () => {
-  console.log(tab.value)
-}
-
 const tabs = [
   {
     value: "1",
@@ -43,7 +39,7 @@ const tabs = [
 <template>
   <v-container>
     <v-row justify="center" class="options ga-5">
-      <v-tabs v-model="tab" bg-color="#212121" color="#AC033C" @update:model-value="test">
+      <v-tabs v-model="tab" bg-color="#212121" color="#AC033C">
         <v-tab v-for="tab in tabs" :value="tab.value">
           <v-icon :name="tab.icon" scale="1.25" class="mr-2" />
           {{ tab.label }}
