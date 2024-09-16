@@ -1,18 +1,42 @@
 <script setup lang="ts">
 import Header from './components/Header.vue';
-import Categories from './components/Categories.vue';
-import CardsContainer from './components/CardsContainer.vue';
 import Footer from './components/Footer.vue';
+/* import { useRoute } from 'vue-router'; */
+import { ref, computed, DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes } from 'vue'
+import Restaurants from './pages/Restaurants.vue';
+import Tourism from './pages/Tourism.vue';
+
+type RouteOptions = {
+  [key: string]: DefineComponent<{}, {}, {}, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<{}>>, {}, {}>
+}
+
+const routes: RouteOptions = {
+  '/': Restaurants,
+  'turismo': Tourism
+}
+
+const currentPath = ref(window.location.pathname)
+
+window.addEventListener('locationchange', () => {
+  currentPath.value = window.location.pathname
+})
+
+const currentView = computed(() => {
+  return routes[currentPath.value.slice(1) || '/']
+})
 </script>
 
 <template>
   <v-app>
     <v-layout>
       <Header />
-      <v-main class="background mt-5">
-        <Categories />
-        <CardsContainer />
-      </v-main>
+      <component :is="currentView" />
+<!--       <nav>
+        <RouterLink to="/">Go to Home</RouterLink>
+        <RouterLink to="/turismo">Go to About</RouterLink>
+      </nav> -->
+<!--       <RouterView /> -->
+
     </v-layout>
     <Footer />
   </v-app>
@@ -42,10 +66,5 @@ import Footer from './components/Footer.vue';
   background-color: #212121;
   color: #fff;
   border-radius: 10px;
-}
-
-.options {
-  color: #AC033C;
-  /* gap: 30px; */
 }
 </style>

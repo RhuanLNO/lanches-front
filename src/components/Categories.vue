@@ -1,46 +1,24 @@
 <script setup lang="ts">
-import { tab } from '../stores/tab.ts'
+type Tab = {
+  value: String,
+  icon: String,
+  label: String
+};
 
-const tabs = [
-  {
-    value: "1",
-    icon: "fa-hamburger",
-    label: "Hambúrguer"
-  },
-  {
-    value: "2",
-    icon: "gi-sushis",
-    label: "Asiática"
-  },
-  {
-    value: "3",
-    icon: "gi-sandwich",
-    label: "Sanduíches"
-  },
-  {
-    value: "4",
-    icon: "gi-cupcake",
-    label: "Sobremesas"
-  },
-  {
-    value: "5",
-    icon: "md-fitnesscenter",
-    label: "Fitness"
-  },
-  {
-    value: "6",
-    icon: "fa-pizza-slice",
-    label: "Pizza"
-  },
-];
+const props = defineProps({
+  tabs: Array<Tab>,
+  color: String
+});
+
+import { tab } from '../stores/tab.ts'
 
 </script>
 
 <template>
   <v-container>
     <v-row justify="center" class="options ga-5">
-      <v-tabs v-model="tab" bg-color="#212121" color="#AC033C">
-        <v-tab v-for="tab in tabs" :value="tab.value">
+      <v-tabs v-model="tab" bg-color="#212121" :color="props.color">
+        <v-tab v-for="tab in props.tabs" :value="tab.value">
           <v-icon :name="tab.icon" scale="1.25" class="mr-2" />
           {{ tab.label }}
         </v-tab>

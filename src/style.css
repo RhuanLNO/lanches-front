@@ -1,3 +1,8 @@
+:root {
+  --main-color: #AC033C;
+  --secondary-color: #FFC400;
+}
+
 html {
   overflow-y: auto !important;
 }
@@ -5,7 +10,7 @@ html {
 /* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #AC033C #55595A;
+  scrollbar-color: var(--main-color) #55595A;
 }
 
 /* Chrome, Edge and Safari */
@@ -28,13 +33,13 @@ html {
 
 *::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background-color: #AC033C;
+  background-color: var(--main-color);
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background-color: #AC033C;
+  background-color: var(--main-color);
 }
 
 *::-webkit-scrollbar-thumb:active {
-  background-color: #AC033C;
+  background-color: var(--main-color);
 }
