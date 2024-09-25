@@ -2,11 +2,14 @@
 import Categories from '../components/Categories.vue';
 import CardsContainer from '../components/CardsContainer.vue';
 import { tourismTabs } from '../stores/tab';
+import { tourismArr } from '../stores/tourism';
+import PageSelect from '../components/PageSelect.vue';
 </script>
 
 <template>
   <v-main class="background mt-5">
+    <PageSelect :value="1" color="var(--secondary-color)" route="/" />
     <Categories :tabs="tourismTabs" color="var(--secondary-color)" />
-    <CardsContainer color="var(--secondary-color)" />
+    <CardsContainer color="var(--secondary-color)" :content-arr="tourismArr" />
   </v-main>
 </template>

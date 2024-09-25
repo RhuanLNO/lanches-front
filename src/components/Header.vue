@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import logo from '../assets/logo2.png'
+import logo from '../assets/logo2.png'
 </script>
 
 <template>
@@ -11,14 +11,14 @@
 </template>
 
 <style>
-  .headerTitle {
-    font-size: 28px !important;
-  }
+.headerTitle {
+  font-size: 28px !important;
+}
 
-  .logoContainer {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-  }
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
 </style>

@@ -5,6 +5,7 @@ import Footer from './components/Footer.vue';
 import { ref, computed, DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes } from 'vue'
 import Restaurants from './pages/Restaurants.vue';
 import Tourism from './pages/Tourism.vue';
+import PageSelect from './components/PageSelect.vue';
 
 type RouteOptions = {
   [key: string]: DefineComponent<{}, {}, {}, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly<ExtractPropTypes<{}>>, {}, {}>

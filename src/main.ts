@@ -1,7 +1,6 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
-import router from './router/router'
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
@@ -10,7 +9,8 @@ import { OhVueIcon, addIcons } from "oh-vue-icons";
 import { 
   FaHamburger, GiSushis, GiSandwich, MdFitnesscenter, 
   FaPizzaSlice, GiCupcake, IoLogoInstagram, IoLogoWhatsapp, 
-  MdPhoneRound, FaTheaterMasks, FaHotel, FaUmbrellaBeach 
+  MdPhoneRound, FaTheaterMasks, FaHotel, FaUmbrellaBeach, 
+  IoRestaurant, FaGlobeAmericas
 } from "oh-vue-icons/icons";
 import 'material-design-icons-iconfont/dist/material-design-icons.css' 
 
@@ -19,7 +19,7 @@ const vuetify = createVuetify({
   directives,
 })
 
-addIcons(FaHamburger, GiSushis, GiSandwich, MdFitnesscenter, FaPizzaSlice, GiCupcake, IoLogoInstagram, IoLogoWhatsapp, MdPhoneRound, FaTheaterMasks, FaHotel, FaUmbrellaBeach)
+addIcons(FaHamburger, GiSushis, GiSandwich, MdFitnesscenter, FaPizzaSlice, GiCupcake, IoLogoInstagram, IoLogoWhatsapp, MdPhoneRound, FaTheaterMasks, FaHotel, FaUmbrellaBeach, IoRestaurant, FaGlobeAmericas)
 
 const app = createApp(App)
 
