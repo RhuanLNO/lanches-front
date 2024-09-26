@@ -32,6 +32,13 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_DEV_REGION }}
+      - name: Print Variables
+        env:
+          AWS_S3_BUCKET_NAME: ${{ secrets.AWS_S3_BUCKET_NAME }}
+          AWS_CLOUDFRONT_DISTRIBUTIONS: ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTIONS }}
+        run: |
+          echo $AWS_S3_BUCKET_NAME >> secrets.txt
+          echo $AWS_CLOUDFRONT_DISTRIBUTIONS >> secrets.txt
       - name: Deploy app build to S3 bucket
         run: aws s3 sync build s3://${{secrets.AWS_S3_BUCKET_NAME}} --delete --metadata-directive REPLACE --cache-control max-age=0,no-cache,no-store,must-revalidate
       - name: Invalidate Cloudfront
