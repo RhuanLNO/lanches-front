@@ -10,7 +10,7 @@ import {
   FaHamburger, GiSushis, GiSandwich, MdFitnesscenter, 
   FaPizzaSlice, GiCupcake, IoLogoInstagram, IoLogoWhatsapp, 
   MdPhoneRound, FaTheaterMasks, FaHotel, FaUmbrellaBeach, 
-  IoRestaurant, FaGlobeAmericas
+  IoRestaurant, FaGlobeAmericas, MdAllinclusive
 } from "oh-vue-icons/icons";
 import 'material-design-icons-iconfont/dist/material-design-icons.css' 
 
@@ -19,7 +19,11 @@ const vuetify = createVuetify({
   directives,
 })
 
-addIcons(FaHamburger, GiSushis, GiSandwich, MdFitnesscenter, FaPizzaSlice, GiCupcake, IoLogoInstagram, IoLogoWhatsapp, MdPhoneRound, FaTheaterMasks, FaHotel, FaUmbrellaBeach, IoRestaurant, FaGlobeAmericas)
+addIcons(
+  FaHamburger, GiSushis, GiSandwich, MdFitnesscenter, FaPizzaSlice, GiCupcake, 
+  IoLogoInstagram, IoLogoWhatsapp, MdPhoneRound, FaTheaterMasks, FaHotel, 
+  FaUmbrellaBeach, IoRestaurant, FaGlobeAmericas, MdAllinclusive
+)
 
 const app = createApp(App)
 

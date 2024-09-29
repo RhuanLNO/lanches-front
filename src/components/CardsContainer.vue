@@ -31,6 +31,10 @@ const getRestaurants = async () => {
   loading.value = true;
   content.value = [];
   if (props.contentArr) {
+    if(tab.value === '0') {
+      content.value = props.contentArr;
+      return
+    };
     const filteredRestaurants: ApiResponse[] = props.contentArr.filter((content) => content.categories.some(category => category === Number(tab.value)));
     content.value = filteredRestaurants;
   };

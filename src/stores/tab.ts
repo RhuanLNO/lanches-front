@@ -1,8 +1,13 @@
 import { ref } from 'vue';
 
-export const tab = ref('1');
+export const tab = ref('0');
 
 export const restaurantTabs = [
+  {
+    value: "0",
+    icon: "md-allinclusive",
+    label: "Todos"
+  },
   {
     value: "1",
     icon: "fa-hamburger",
@@ -36,6 +41,11 @@ export const restaurantTabs = [
 ];
 
 export const tourismTabs = [
+  {
+    value: "0",
+    icon: "md-allinclusive",
+    label: "Todos"
+  },
   {
     value: "1",
     icon: "fa-hotel",
