@@ -1,3 +1,5 @@
+import anhumas from '../assets/anhumas.jpg'
+
 type ApiResponse = {
   id: number,
   name: string,
@@ -11,6 +13,15 @@ type ApiResponse = {
 export const tourismArr: ApiResponse[] = [
 	{
 		"id" : 1,
+		"name" : "Casa Museu da Fazenda Anhumas",
+		"businessHours" : "Todos os dias 09:00 às 16:00 (agendamento prévio)",
+		"instagram" : "fazendaanhumas",
+		"phone" : "82996575789",
+		"photo" : anhumas,
+		"categories": [1, 2, 3]
+	},
+	{
+		"id" : 2,
 		"name" : "Quilombo Park Hotel",
 		"businessHours" : "Todos os dias 24 horas",
 		"instagram" : "quilombohotelfazenda",
@@ -19,7 +30,7 @@ export const tourismArr: ApiResponse[] = [
 		"categories": [1, 3]
 	},
 	{
-		"id" : 2,
+		"id" : 3,
 		"name" : "Hotel Santa Maria Madalena",
 		"businessHours" : "Todos os dias 24 horas",
 		"instagram" : "hotelsantamariamadalena",
@@ -28,7 +39,7 @@ export const tourismArr: ApiResponse[] = [
 		"categories": [1]
 	},
 	{
-		"id" : 3,
+		"id" : 4,
 		"name" : "Varandas Hotel",
 		"businessHours" : "Todos os dias 24 horas",
 		"instagram" : "",
