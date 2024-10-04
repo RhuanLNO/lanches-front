@@ -13,7 +13,7 @@ type ApiResponse = {
 export const tourismArr: ApiResponse[] = [
 	{
 		"id" : 1,
-		"name" : "Casa Museu da Fazenda Anhumas",
+		"name" : "Casa Museu Fazenda Anhumas",
 		"businessHours" : "Todos os dias 09:00 às 16:00 (agendamento prévio)",
 		"instagram" : "fazendaanhumas",
 		"phone" : "82996575789",
