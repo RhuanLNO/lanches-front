@@ -14,7 +14,7 @@ export const tourismArr: ApiResponse[] = [
 	{
 		"id" : 1,
 		"name" : "Casa Museu Fazenda Anhumas",
-		"businessHours" : "Todos os dias 09:00 às 16:00 (agendamento prévio)",
+		"businessHours" : "TER - DOM 09:00 às 16:00 (agendamento prévio)",
 		"instagram" : "fazendaanhumas",
 		"phone" : "82996575789",
 		"photo" : anhumas,
