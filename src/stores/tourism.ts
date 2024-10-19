@@ -1,4 +1,7 @@
 import anhumas from '../assets/anhumas.jpg'
+import globo from '../assets/globo.png'
+import seduardo from '../assets/seduardo.jpg'
+import stantonio from '../assets/stantonio.jpg'
 
 type ApiResponse = {
   id: number,
@@ -46,5 +49,68 @@ export const tourismArr: ApiResponse[] = [
 		"phone" : "82991857270",
 		"photo" : "https://varandas-hotel.hoteis-noreste-de-brasil.com/data/Images/OriginalPhoto/6666/666699/666699600/image-uniao-dos-palmares-varandas-hotel-1.JPEG",
 		"categories": [1]
+	},
+	{
+		"id" : 5,
+		"name" : "Hotel Globo",
+		"businessHours" : "Todos os dias 24 horas",
+		"instagram" : "grupoelianedoglobo",
+		"phone" : "82987611810",
+		"photo" : globo,
+		"categories": [1]
+	},
+	{
+		"id" : 6,
+		"name" : "Pousada Santo Eduardo",
+		"businessHours" : "Todos os dias 24 horas",
+		"instagram" : "postosantoeduardo",
+		"phone" : "8232811449",
+		"photo" : seduardo,
+		"categories": [1]
+	},
+	{
+		"id" : 6,
+		"name" : "Pousada Palmares",
+		"businessHours" : "Todos os dias 24 horas",
+		"instagram" : "",
+		"phone" : "8232811375",
+		"photo" : "https://lh3.googleusercontent.com/p/AF1QipMxEQXghdPs_XBr1vcCtY0VPtoN6uXyA6bTK6_E=s680-w680-h510",
+		"categories": [1]
+	},
+	{
+		"id" : 7,
+		"name" : "Pousada do Pita",
+		"businessHours" : "Sem informações",
+		"instagram" : "",
+		"phone" : "8232814260",
+		"photo" : "",
+		"categories": [1]
+	},
+	{
+		"id" : 8,
+		"name" : "Pousada Santo Antonio",
+		"businessHours" : "Sem informações",
+		"instagram" : "pousadasantoantonioudp",
+		"phone" : "82994045476",
+		"photo" : stantonio,
+		"categories": [1]
+	},
+	{
+		"id" : 9,
+		"name" : "Hotel Terraço Suites",
+		"businessHours" : "Todos os dias 24 horas",
+		"instagram" : "terracosuites",
+		"phone" : "82991142021",
+		"photo" : "https://hotel-terraco-suites-uniao-dos-palmares.ibooked.com.br/data/Photos/OriginalPhoto/14669/1466910/1466910542/Hotel-Terraco-Suites-Uniao-dos-Palmares-Exterior.JPEG",
+		"categories": [1]
+	},
+	{
+		"id" : 10,
+		"name" : "Recanto Mirante das Águas",
+		"businessHours" : "Todos os dias 09:00 às 18:00",
+		"instagram" : "aguasmirante",
+		"phone" : "82999313397",
+		"photo" : "https://recantomirantedasaguas.com.br/assets/images/pgina-logo.png",
+		"categories": [1, 3]
 	},
 ]

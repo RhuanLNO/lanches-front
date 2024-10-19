@@ -53,6 +53,11 @@ watch(() => tab.value, getRestaurants, { immediate: true })
         <v-card class="card">
           <v-card-item>
             <v-col>
+<!--               <div class="premiumContainer">
+                <span class="premiumSpan">
+                  <v-icon name="fa-star" color="#fff" />
+                </span>
+              </div> -->
               <img :src="restaurant.photo ? restaurant.photo : placeholder" width="100%" class="photo" />
               <v-col class="">
                 <div class="title">{{ restaurant.name }}</div>
@@ -60,18 +65,18 @@ watch(() => tab.value, getRestaurants, { immediate: true })
                   <v-row justify="center" class="ga-3">
                     <a :href="restaurant.phone ? 'tel:' + restaurant.phone : undefined">
                       <v-btn class="ma-2" :color="props.color">
-                        <v-icon name="md-phone-round" scale="1.15" />
+                        <v-icon name="md-phone-round" scale="1.15" color="#fff" />
                       </v-btn>
                     </a>
                     <a :href="restaurant.phone ? 'https://wa.me/' + restaurant.phone : undefined" target="_blank">
                       <v-btn class="ma-2" :color="props.color">
-                        <v-icon name="io-logo-whatsapp" scale="1.15" />
+                        <v-icon name="io-logo-whatsapp" scale="1.15" color="#fff" />
                       </v-btn>
                     </a>
                     <a :href="restaurant.instagram ? 'https://www.instagram.com/' + restaurant.instagram : undefined"
                       target="_blank">
                       <v-btn class="ma-2" :color="props.color">
-                        <v-icon name="io-logo-instagram" scale="1.15" />
+                        <v-icon name="io-logo-instagram" scale="1.15" color="#fff" />
                       </v-btn>
                     </a>
                   </v-row>
@@ -142,5 +147,16 @@ p {
 .title {
   font-size: 20px;
   font-weight: 600;
+}
+
+.premiumContainer {
+  position: absolute;
+  right: 10px;
+}
+
+.premiumSpan {
+  padding: 10px 15px;
+  background-color: #7026c8;
+  border-radius: 25px;
 }
 </style>
