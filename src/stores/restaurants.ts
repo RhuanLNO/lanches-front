@@ -1,3 +1,9 @@
+import careca from '../assets/careca.jpg'
+import imperio from '../assets/imperio.jpg'
+import vianna from '../assets/vianna.jpg'
+import immense from '../assets/immense.png'
+import reddragon from '../assets/reddragon.jpg'
+
 type ApiResponseRestaurant = {
   id: number,
   name: string,
@@ -5,7 +11,9 @@ type ApiResponseRestaurant = {
   instagram: string | null,
   phone: string | null,
   photo: string | null,
-  categories: Array<Number>
+  categories: Array<Number>,
+  isMocambos: boolean,
+  isPremium: boolean
 }
 
 export const restaurantsArr: ApiResponseRestaurant[] = [
@@ -16,7 +24,9 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"instagram" : "delicious.burguer",
 		"phone" : "82988907222",
 		"photo" : "https:\/\/static.ifood-static.com.br\/image\/upload\/t_high\/logosgde\/67993dd9-a382-4926-80e9-a4b164ccf5e1\/201910241502_F2Gq_i.jpg",
-		"categories": [1, 3, 4, 5]
+		"categories": [1, 3, 4, 5],
+		"isMocambos": false,
+		"isPremium": false
 	},
 	{
 		"id" : 3,
@@ -25,7 +35,9 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"instagram" : "theburgerplace_01",
 		"phone" : "82991315191",
 		"photo" : "https:\/\/encrypted-tbn0.gstatic.com\/images?q=tbn:ANd9GcRlv8zxrXVobJ-Yd1Fz9RvuwyuM0eL_SS2o3KRnWCMYuG6PH_5KysBi9YGJ3JedqLNz5PA&usqp=CAU",
-		"categories": [1]
+		"categories": [1],
+		"isMocambos": false,
+		"isPremium": false
 	},
 	{
 		"id" : 4,
@@ -34,7 +46,9 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"instagram" : "insanosburger",
 		"phone" : "82994238167",
 		"photo" : "https:\/\/encrypted-tbn0.gstatic.com\/images?q=tbn:ANd9GcTo8EYDXud0zSUcjiFdzm2dnT8XS83V6SBm4JxcITQt-FpExQtn11hHFbUbU-eDR1uL8nw&usqp=CAU",
-		"categories": [1]
+		"categories": [1],
+		"isMocambos": false,
+		"isPremium": false
 	},
 	{
 		"id" : 5,
@@ -42,8 +56,10 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"businessHours" : "Todos os dias 18:00 - 23:59",
 		"instagram" : "careca_burguer_hamburgueria",
 		"phone" : "82994132261",
-		"photo" : "",
-		"categories": [1]
+		"photo" : careca,
+		"categories": [1],
+		"isMocambos": false,
+		"isPremium": false
 	},
 	{
 		"id" : 6,
@@ -51,8 +67,10 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"businessHours" : "QUA - SEG 19:00 - 23:30",
 		"instagram" : "immense_burguer",
 		"phone" : "82996014988",
-		"photo" : "",
-		"categories": [1]
+		"photo" : immense,
+		"categories": [1],
+		"isMocambos": false,
+		"isPremium": false
 	},
 	{
 		"id" : 7,
@@ -60,8 +78,10 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"businessHours" : "TER - DOM 15:00 - 23:00",
 		"instagram" : "imperio_do_acai_burguer",
 		"phone" : "82991397418",
-		"photo" : "https:\/\/shorturl.at\/avBD4",
-		"categories": [1, 4, 5]
+		"photo" : imperio,
+		"categories": [1, 4, 5],
+		"isMocambos": false,
+		"isPremium": false
 	},
 	{
 		"id" : 8,
@@ -69,8 +89,10 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"businessHours" : "Todos os dias 17:00 - 23:59",
 		"instagram" : "viannacomedoria",
 		"phone" : "82991905200",
-		"photo" : "https:\/\/shorturl.at\/JPVY9",
-		"categories": [1, 6]
+		"photo" : vianna,
+		"categories": [1, 6],
+		"isMocambos": false,
+		"isPremium": false
 	},
 	{
 		"id" : 9,
@@ -79,7 +101,9 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"instagram" : "bighotdog82",
 		"phone" : "82991119242",
 		"photo" : "",
-		"categories": [1, 3]
+		"categories": [1, 3],
+		"isMocambos": false,
+		"isPremium": false
 	},
 	{
 		"id" : 10,
@@ -87,8 +111,10 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"businessHours" : "QUA - DOM 18:00 - 23:30",
 		"instagram" : "reddragonsushibar",
 		"phone" : "82994227421",
-		"photo" : "https:\/\/shorturl.at\/jsxIZ",
-		"categories": [2]
+		"photo" : reddragon,
+		"categories": [2],
+		"isMocambos": false,
+		"isPremium": false
 	},
 	{
 		"id" : 11,
@@ -97,7 +123,9 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"instagram" : "suchimbras",
 		"phone" : "82993712121",
 		"photo" : "https:\/\/assets.hubt.com.br\/img\/share\/45034\/V93fACPxHgX7V1lwJPU",
-		"categories": [2]
+		"categories": [2],
+		"isMocambos": false,
+		"isPremium": false
 	},
 	{
 		"id" : 12,
@@ -106,7 +134,9 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"instagram" : "suchikeyuniao",
 		"phone" : "82993276540",
 		"photo" : "",
-		"categories": [2]
+		"categories": [2],
+		"isMocambos": false,
+		"isPremium": false
 	},
 	{
 		"id" : 13,
@@ -115,7 +145,9 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"instagram" : "lanchonetedozecaudp",
 		"phone" : "82991741196",
 		"photo" : "https:\/\/10619-2.s.cdn12.com\/rests\/original\/107_511523009.jpg",
-		"categories": [3]
+		"categories": [3],
+		"isMocambos": false,
+		"isPremium": false
 	},
 	{
 		"id" : 14,
@@ -124,7 +156,9 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"instagram" : "ki.amore",
 		"phone" : "82993652573",
 		"photo" : "https:\/\/shorturl.at\/dixV5",
-		"categories": [3, 6]
+		"categories": [3, 6],
+		"isMocambos": false,
+		"isPremium": false
 	},
 	{
 		"id" : 15,
@@ -133,7 +167,9 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"instagram" : "sorvetesdocedelicia",
 		"phone" : "82981893353",
 		"photo" : "",
-		"categories": [4]
+		"categories": [4],
+		"isMocambos": false,
+		"isPremium": false
 	},
 	{
 		"id" : 16,
@@ -142,7 +178,9 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"instagram" : "bigacaiuniao",
 		"phone" : "82993993310",
 		"photo" : "https:\/\/shorturl.at\/wAS24",
-		"categories": [4]
+		"categories": [4],
+		"isMocambos": false,
+		"isPremium": false
 	},
 	{
 		"id" : 17,
@@ -151,7 +189,9 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"instagram" : "dooceriadaanna",
 		"phone" : "82993355493",
 		"photo" : "",
-		"categories": [4]
+		"categories": [4],
+		"isMocambos": false,
+		"isPremium": false
 	},
 	{
 		"id" : 18,
@@ -160,7 +200,9 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"instagram" : "meusdocees",
 		"phone" : "82996429407",
 		"photo" : "https:\/\/static.ifood-static.com.br\/image\/upload\/t_medium\/logosgde\/6d2d8cb8-71f7-4884-a7a4-1e019664f1e0\/202309031900_MomU_i.jpg",
-		"categories": [4]
+		"categories": [4],
+		"isMocambos": false,
+		"isPremium": false
 	},
 	{
 		"id" : 19,
@@ -169,7 +211,9 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"instagram" : "danicake_deliciasdobolo",
 		"phone" : "82993535764",
 		"photo" : "https:\/\/shorturl.at\/CFNPV",
-		"categories": [4]
+		"categories": [4],
+		"isMocambos": false,
+		"isPremium": false
 	},
 	{
 		"id" : 2,
@@ -177,8 +221,10 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"businessHours" : "Todos os dias 18:00 - 23:59",
 		"instagram" : "phoenixgastrobar",
 		"phone" : "82991834867",
-		"photo" : "https:\/\/10619-2.s.cdn12.com\/rests\/original\/102_535945160.jpg",
-		"categories": [1, 6]
+		"photo" : "https://static.ifood-static.com.br/image/upload/t_high/logosgde/8f8b7884-9be8-4930-8981-51920f618ad2/202402182223_TxnL_.jpeg",
+		"categories": [1, 6],
+		"isMocambos": false,
+		"isPremium": false
 	},
 	{
 		"id" : 20,
@@ -187,6 +233,8 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"instagram" : "acaizal_fastfoodfit",
 		"phone" : "82991054048",
 		"photo" : "https:\/\/shorturl.at\/szGRX",
-		"categories": [3, 4, 5]
+		"categories": [3, 4, 5],
+		"isMocambos": false,
+		"isPremium": false
 	}
 ]

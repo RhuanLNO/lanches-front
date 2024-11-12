@@ -11,7 +11,9 @@ type ApiResponse = {
   phone: string | null,
   photo: string | null,
   /* categories: Array<Category> */
-  categories: Array<Number>
+  categories: Array<Number>,
+  isMocambos: boolean,
+  isPremium: boolean
 }
 
 const props = defineProps({
@@ -31,7 +33,7 @@ const getRestaurants = async () => {
   loading.value = true;
   content.value = [];
   if (props.contentArr) {
-    if(tab.value === '0') {
+    if (tab.value === '0') {
       content.value = props.contentArr;
       return
     };
@@ -53,11 +55,24 @@ watch(() => tab.value, getRestaurants, { immediate: true })
         <v-card class="card">
           <v-card-item>
             <v-col>
-<!--               <div class="premiumContainer">
-                <span class="premiumSpan">
-                  <v-icon name="fa-star" color="#fff" />
-                </span>
-              </div> -->
+              <v-tooltip text="Parceiro Premium" location="bottom center">
+                <template v-slot:activator="{ props }"  >
+                  <div class="premiumContainer" v-bind="props" v-if="restaurant.isPremium && !restaurant.isMocambos">
+                    <span class="premiumSpan">
+                      <v-icon name="fa-star" color="#fff" />
+                    </span>
+                  </div>
+                </template>
+              </v-tooltip>
+              <v-tooltip text="Parceiro Destaque - Projeto Mocambos" location="bottom center">
+                <template v-slot:activator="{ props }"  >
+                  <div class="premiumContainer" v-bind="props" v-if="!restaurant.isPremium && restaurant.isMocambos">
+                    <span class="mocambosSpan">
+                      <v-icon name="fa-star" color="#fff" />
+                    </span>
+                  </div>
+                </template>
+              </v-tooltip>
               <img :src="restaurant.photo ? restaurant.photo : placeholder" width="100%" class="photo" />
               <v-col class="">
                 <div class="title">{{ restaurant.name }}</div>
@@ -155,6 +170,12 @@ p {
 }
 
 .premiumSpan {
+  padding: 10px 15px;
+  background-color: #FFC400;
+  border-radius: 25px;
+}
+
+.mocambosSpan {
   padding: 10px 15px;
   background-color: #7026c8;
   border-radius: 25px;
