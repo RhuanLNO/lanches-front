@@ -31,12 +31,17 @@ export const restaurantTabs = [
   {
     value: "5",
     icon: "md-fitnesscenter",
-    label: "Fitness"
+    label: "Saudável"
   },
   {
     value: "6",
     icon: "fa-pizza-slice",
     label: "Pizza"
+  },
+  {
+    value: "7",
+    icon: "co-drink-alcohol",
+    label: "Bebidas"
   },
 ];
 
@@ -60,5 +65,10 @@ export const tourismTabs = [
     value: "3",
     icon: "fa-umbrella-beach",
     label: "Lazer"
+  },
+  {
+    value: "4",
+    icon: "bi-gift-fill",
+    label: "Presentes"
   }
 ];

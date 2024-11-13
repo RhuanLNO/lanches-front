@@ -3,7 +3,10 @@ import imperio from '../assets/imperio.jpg'
 import vianna from '../assets/vianna.jpg'
 import immense from '../assets/immense.png'
 import reddragon from '../assets/reddragon.jpg'
-
+import licor from '../assets/licor.jpeg'
+import salute from '../assets/salute.jpg'
+import clubedahorta from '../assets/clubedahorta.jpg'
+import coffeebreak from '../assets/coffeebreak.jpg'
 type ApiResponseRestaurant = {
   id: number,
   name: string,
@@ -236,5 +239,49 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"categories": [3, 4, 5],
 		"isMocambos": false,
 		"isPremium": false
-	}
+	},
+	{
+		"id" : 21,
+		"name" : "Salute Drinks",
+		"businessHours" : "Sob marcação",
+		"instagram" : "salute.drinks01",
+		"phone" : "82981431695",
+		"photo" : salute,
+		"categories": [7],
+		"isMocambos": true,
+		"isPremium": false
+	},
+	{
+		"id" : 22,
+		"name" : "Licor Flor de Açucena",
+		"businessHours" : "Sob encomenda",
+		"instagram" : "licorflordeacucena",
+		"phone" : "82991260070",
+		"photo" : licor,
+		"categories": [7],
+		"isMocambos": true,
+		"isPremium": false
+	},
+/* 	{
+		"id" : 23,
+		"name" : "Clube da Horta",
+		"businessHours" : "Sob encomenda", //falta
+		"instagram" : "clube_da_horta_",
+		"phone" : "82991260070",
+		"photo" : clubedahorta,
+		"categories": [7],
+		"isMocambos": true,
+		"isPremium": false
+	},
+	{
+		"id" : 24,
+		"name" : "Coffee Break Agroecológico",
+		"businessHours" : "Sob encomenda", //falta
+		"instagram" : "coffebreak_agroecologico",
+		"phone" : "82991260070",
+		"photo" : coffeebreak,
+		"categories": [7],
+		"isMocambos": true,
+		"isPremium": false
+	}, */
 ]

@@ -34,10 +34,18 @@ const getRestaurants = async () => {
   content.value = [];
   if (props.contentArr) {
     if (tab.value === '0') {
-      content.value = props.contentArr;
-      return
+      content.value = [...props.contentArr].sort((a, b) => {
+        if ((a.isPremium || a.isMocambos) === (b.isPremium || b.isMocambos)) return 0;
+        return (a.isPremium || a.isMocambos) ? -1 : 1;
+      });
+      return;
     };
-    const filteredRestaurants: ApiResponse[] = props.contentArr.filter((content) => content.categories.some(category => category === Number(tab.value)));
+    const filteredRestaurants: ApiResponse[] = props.contentArr
+      .filter((content) => content.categories.some(category => category === Number(tab.value)))
+      .sort((a, b) => {
+        if ((a.isPremium || a.isMocambos) === (b.isPremium || b.isMocambos)) return 0;
+        return (a.isPremium || a.isMocambos) ? -1 : 1;
+      });
     content.value = filteredRestaurants;
   };
   /*   fetch(`${import.meta.env.VITE_BACK_URL}/restaurants?category=${tab.value}`)
