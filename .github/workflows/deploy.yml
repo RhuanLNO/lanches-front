@@ -19,16 +19,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20.11.0'
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v3
-  
-  
-      - name: Install the dependencies
-        run: pnpm install
 
+      - name: Install the dependencies
+        run: yarn
 
       - name: Build the app
-        run: pnpm build
+        run: yarn build
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
