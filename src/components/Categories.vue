@@ -10,7 +10,7 @@ const props = defineProps({
   color: String
 });
 
-import { tab } from '../stores/tab.ts'
+import { tab } from '../stores/tab'
 
 </script>
 

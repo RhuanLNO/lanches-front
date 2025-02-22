@@ -21,10 +21,11 @@ jobs:
           node-version: '20.11.0'
 
       - name: Install the dependencies
-        run: yarn
+        run: pnpm install
+
 
       - name: Build the app
-        run: yarn build
+        run: pnpm build
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
