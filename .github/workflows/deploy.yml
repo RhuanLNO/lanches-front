@@ -20,6 +20,10 @@ jobs:
         with:
           node-version: '20.11.0'
 
+      - name: Install pnpm
+        run: npm i pnpm@latest
+  
+  
       - name: Install the dependencies
         run: pnpm install
 
