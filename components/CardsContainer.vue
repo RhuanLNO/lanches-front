@@ -83,7 +83,7 @@ watch(() => tab.value, getRestaurants, { immediate: true })
                   </div>
                 </template>
               </v-tooltip>
-              <img :src="restaurant.photo ? restaurant.photo : placeholder" width="100%" class="photo" />
+              <img :key="restaurant.id" :src="restaurant.photo ? restaurant.photo : placeholder" width="100%" class="photo" />
               <v-col class="">
                 <div class="title">{{ restaurant.name }}</div>
                 <v-col>

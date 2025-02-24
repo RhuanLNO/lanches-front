@@ -1,15 +1,17 @@
 <script setup lang="ts">
 const route = useRoute();
 const actualRoute = route?.query?.tab;
-import '~/style.css'
+import "~/style.css";
 </script>
 
 <template>
   <v-app>
     <v-layout>
-      <Header />
-      <Tourism v-if="actualRoute === 'turismo'" />
-      <Restaurants v-else />
+      <ClientOnly>
+        <Header />
+        <Tourism v-if="actualRoute === 'turismo'" />
+        <Restaurants v-else />
+      </ClientOnly>
     </v-layout>
     <Footer />
   </v-app>

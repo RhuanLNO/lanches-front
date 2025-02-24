@@ -6,9 +6,10 @@ const props = defineProps<{
   color: string
 }>();
 
-const tab = ref(props.pageValue);
+const route = useRoute();
+const actualRoute = route?.query?.tab;
 
-console.log(tab.value)
+const tab = ref(actualRoute ?? "restaurantes");
 
 </script>
 
@@ -17,13 +18,13 @@ console.log(tab.value)
     <v-row justify="center" class="options ga-5">
       <v-tabs v-model="tab" bg-color="#212121" :color="color">
         <a href="?tab=restaurantes">
-          <v-tab :value="2">
+          <v-tab value="restaurantes">
             <Icon name="mdi:restaurant" class="mr-2" style="transform: scale(1.5);" />
             Restaurantes
           </v-tab>
         </a>
         <a href="/?tab=turismo">
-          <v-tab :value="1">
+          <v-tab value="turismo">
             <Icon name="fa-solid:globe-americas" class="mr-2" style="transform: scale(1.5);" />
             Turismo
           </v-tab>
