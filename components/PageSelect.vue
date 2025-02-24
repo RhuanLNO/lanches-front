@@ -9,6 +9,8 @@ const props = defineProps<{
 
 const tab = ref(props.pageValue);
 
+console.log(tab.value)
+
 </script>
 
 <template>
