@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import logo from '../assets/logo-new.png'
+import logo from "../assets/logo-new.png";
 </script>
 
 <template>
   <v-app-bar :elevation="2" color="grey-darken-4" height="100">
     <div class="logoContainer">
-      <img :src="logo" />
+      <a href="/">
+        <img :src="logo" height="100%" />
+      </a>
     </div>
   </v-app-bar>
 </template>
