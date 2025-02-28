@@ -10,6 +10,7 @@ import PageSelect from '../../components/PageSelect.vue';
   <v-main class="background mt-5">
     <PageSelect :pageValue="2" color="var(--main-color)" route="?tab=turismo" />
     <Categories :tabs="restaurantTabs" color="var(--main-color)" class="mt-4" />
+    <AdBanner />
     <CardsContainer color="var(--main-color)" :content-arr="restaurantsArr" />
   </v-main>
 </template>

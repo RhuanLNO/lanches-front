@@ -146,7 +146,7 @@ export const tourismArr: ApiResponse[] = [
 		"phone" : "82991260070",
 		"photo" : licor,
 		"categories": [4],
-		"isMocambos": true,
-		"isPremium": false
+		"isMocambos": false,
+		"isPremium": true
 	},
 ]

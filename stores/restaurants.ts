@@ -248,7 +248,7 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"phone" : "82981431695",
 		"photo" : salute,
 		"categories": [7],
-		"isMocambos": true,
+		"isMocambos": false,
 		"isPremium": false
 	},
 	{
@@ -259,8 +259,8 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"phone" : "82991260070",
 		"photo" : licor,
 		"categories": [7],
-		"isMocambos": true,
-		"isPremium": false
+		"isMocambos": false,
+		"isPremium": true
 	},
 /* 	{
 		"id" : 23,
