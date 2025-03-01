@@ -1,12 +1,13 @@
 <template>
-  <NuxtLayout>
-    <v-app>
-      <NuxtPage />
-    </v-app>
-  </NuxtLayout>
-  <!--  <div>
-
-  </div>-->
+  <v-app>
+    <v-layout class="v-layout">
+      <ClientOnly>
+          <Header />
+          <NuxtPage />
+          <Footer />
+      </ClientOnly>
+    </v-layout>
+  </v-app>
 </template>
 <script setup lang="ts">
 useHead({
@@ -16,7 +17,6 @@ useHead({
     { name: "author", content: "Rhuan Levy" },
     { name: "description", content: "Qual o Rolê?" },
   ],
-  /*  link: [{ rel: 'shortcut icon', href: favicon }]*/
 });
 
 useSeoMeta({
@@ -25,3 +25,8 @@ useSeoMeta({
     "Uma plataforma para digitalização da cidade de União dos Palmares",
 });
 </script>
+<style>
+.v-layout {
+  display: block;
+}
+</style>

@@ -29,8 +29,6 @@ const props = defineProps({
 const loading = ref(false);
 const content = ref<ApiResponse[]>([]);
 
-console.log(props.contentArr)
-
 const getRestaurants = async () => {
   loading.value = true;
   content.value = [];

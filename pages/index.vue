@@ -1,20 +1,34 @@
 <script setup lang="ts">
-const route = useRoute();
-const actualRoute = route?.query?.tab;
+import { ref, watch, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
 import "~/style.css";
+import { restaurantTabs, tourismTabs } from '~/stores/tab';
+import PageSelect from '~/components/PageSelect.vue';
+import Categories from '~/components/Categories.vue';
+import AdBanner from '~/components/AdBanner.vue';
+import type { LocationQueryValue } from "vue-router";
+
+const route = useRoute();
+const tab = ref<string | LocationQueryValue[]>(route.query.tab as string ?? "restaurantes");
+
+const defineTab = (tabValue: string | undefined) => {
+  tab.value = tabValue as string ?? "restaurantes";
+}
+
+watch(() => route.query.tab, (newVal) => {
+  tab.value = newVal as string ?? "restaurantes" ;
+});
+
 </script>
 
 <template>
-  <v-app>
-    <v-layout>
-      <ClientOnly>
-        <Header />
-        <Tourism v-if="actualRoute === 'turismo'" />
-        <Restaurants v-else />
-      </ClientOnly>
-    </v-layout>
-    <Footer />
-  </v-app>
+  <v-main class="background mt-5">
+    <PageSelect :tab-setter="defineTab" :tab-value="tab" @update:tab-value="defineTab" />
+    <Categories :tabs="tab === 'turismo' ? tourismTabs : restaurantTabs" :color="tab === 'turismo' ? '#FFC400' : '#E65100'" class="mt-4" />
+    <AdBanner />
+    <Tourism v-if="tab === 'turismo'" />
+    <Restaurants v-else />
+  </v-main>
 </template>
 
 <style scoped>

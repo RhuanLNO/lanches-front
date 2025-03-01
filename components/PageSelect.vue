@@ -1,34 +1,34 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import type { LocationQueryValue } from 'vue-router';
 
-const props = defineProps<{
-  pageValue: number,
-  color: string
+defineProps<{
+  tabSetter: (tabValue: string) => void,
+  tabValue: string | LocationQueryValue[]
 }>();
 
 const route = useRoute();
-const actualRoute = route?.query?.tab;
+const tabQuery = ref<string | LocationQueryValue[]>(route.query.tab as string ?? "restaurantes");
 
-const tab = ref(actualRoute ?? "restaurantes");
-
+watch(() => route.query.tab, (newVal) => {
+  tabQuery.value = newVal as string ?? "restaurantes";
+});
 </script>
 
 <template>
   <v-container>
     <v-row justify="center" class="options ga-5">
-      <v-tabs v-model="tab" bg-color="#212121" :color="color">
-        <a href="?tab=restaurantes">
-          <v-tab value="restaurantes">
-            <Icon name="mdi:restaurant" class="mr-2" style="transform: scale(1.5);" />
-            Restaurantes
-          </v-tab>
-        </a>
-        <a href="/?tab=turismo">
-          <v-tab value="turismo">
-            <Icon name="fa-solid:globe-americas" class="mr-2" style="transform: scale(1.5);" />
-            Turismo
-          </v-tab>
-        </a>
+      <v-tabs :value="tabValue ? tabValue : 'restaurantes'" bg-color="#212121"
+        :color="tabValue === 'turismo' ? 'var(--secondary-color)' : 'var(--main-color)'" v-model="tabQuery" @update:model-value="(v) => {
+          navigateTo({ query: { tab: v as string } })
+        }">
+        <v-tab value="restaurantes">
+          <Icon name="mdi:restaurant" class="mr-2" style="transform: scale(1.5);" />
+          Restaurantes
+        </v-tab>
+        <v-tab value="turismo">
+          <Icon name="fa-solid:globe-americas" class="mr-2" style="transform: scale(1.5);" />
+          Turismo
+        </v-tab>
       </v-tabs>
     </v-row>
   </v-container>

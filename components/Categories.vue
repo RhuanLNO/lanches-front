@@ -11,6 +11,10 @@ defineProps<{
 }>();
 
 import { tab } from "../stores/tab";
+
+onUpdated(() => {
+  tab.value = "0";  
+})
 </script>
 
 <template>

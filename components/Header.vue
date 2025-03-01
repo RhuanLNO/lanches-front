@@ -5,9 +5,9 @@ import logo from "../assets/logo-new.png";
 <template>
   <v-app-bar :elevation="2" color="grey-darken-4" height="100">
     <div class="logoContainer">
-      <a href="/">
+      <NuxtLink to="/" class="link">
         <img :src="logo" height="100%" />
-      </a>
+      </NuxtLink>
     </div>
   </v-app-bar>
 </template>
@@ -21,6 +21,10 @@ import logo from "../assets/logo-new.png";
   display: flex;
   justify-content: center;
   width: 100%;
+  height: 100%;
+}
+
+.link {
   height: 100%;
 }
 </style>
