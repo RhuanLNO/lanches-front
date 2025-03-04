@@ -3,6 +3,7 @@ import globo from '../assets/globo.png'
 import seduardo from '../assets/seduardo.jpg'
 import stantonio from '../assets/stantonio.jpg'
 import licor from '../assets/licor.jpeg'
+import pousadapalmares from '../assets/pousadapalmares.png'
 
 type ApiResponse = {
   id: number,
@@ -89,7 +90,7 @@ export const tourismArr: ApiResponse[] = [
 		"businessHours" : "Todos os dias 24 horas",
 		"instagram" : "",
 		"phone" : "8232811375",
-		"photo" : "https://lh3.googleusercontent.com/p/AF1QipMxEQXghdPs_XBr1vcCtY0VPtoN6uXyA6bTK6_E=s680-w680-h510",
+		"photo" : pousadapalmares,
 		"categories": [1],
 		"isMocambos": false,
 		"isPremium": false

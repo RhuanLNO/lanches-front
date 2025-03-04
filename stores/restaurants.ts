@@ -7,6 +7,12 @@ import licor from '../assets/licor.jpeg'
 import salute from '../assets/salute.jpg'
 import clubedahorta from '../assets/clubedahorta.jpg'
 import coffeebreak from '../assets/coffeebreak.jpg'
+import zeca from '../assets/zeca.png'
+import kiamore from '../assets/kiamore.png'
+import bigacai from '../assets/bigacai.jpeg'
+import deliciasdobolo from '../assets/deliciasdobolo.jpeg'
+import acaizal from '../assets/acaizal.jpg'
+
 type ApiResponseRestaurant = {
   id: number,
   name: string,
@@ -147,7 +153,7 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"businessHours" : "Todos os dias 17:00 - 23:00",
 		"instagram" : "lanchonetedozecaudp",
 		"phone" : "82991741196",
-		"photo" : "https:\/\/10619-2.s.cdn12.com\/rests\/original\/107_511523009.jpg",
+		"photo" : zeca,
 		"categories": [3],
 		"isMocambos": false,
 		"isPremium": false
@@ -158,7 +164,7 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"businessHours" : "Todos os dias 07:00 - 23:59",
 		"instagram" : "ki.amore",
 		"phone" : "82993652573",
-		"photo" : "https:\/\/shorturl.at\/dixV5",
+		"photo" : kiamore,
 		"categories": [3, 6],
 		"isMocambos": false,
 		"isPremium": false
@@ -180,7 +186,7 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"businessHours" : "Todos os dias 15:00 - 22:00",
 		"instagram" : "bigacaiuniao",
 		"phone" : "82993993310",
-		"photo" : "https:\/\/shorturl.at\/wAS24",
+		"photo" : bigacai,
 		"categories": [4],
 		"isMocambos": false,
 		"isPremium": false
@@ -213,7 +219,7 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"businessHours" : "SEG - SÁB 06:30 - 19:00",
 		"instagram" : "danicake_deliciasdobolo",
 		"phone" : "82993535764",
-		"photo" : "https:\/\/shorturl.at\/CFNPV",
+		"photo" : deliciasdobolo,
 		"categories": [4],
 		"isMocambos": false,
 		"isPremium": false
@@ -235,7 +241,7 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"businessHours" : "DOM - SEX 07:00 - 18:00",
 		"instagram" : "acaizal_fastfoodfit",
 		"phone" : "82991054048",
-		"photo" : "https:\/\/shorturl.at\/szGRX",
+		"photo" : acaizal,
 		"categories": [3, 4, 5],
 		"isMocambos": false,
 		"isPremium": false
