@@ -3,7 +3,6 @@ import imperio from '../assets/imperio.jpg'
 import vianna from '../assets/vianna.jpg'
 import immense from '../assets/immense.png'
 import reddragon from '../assets/reddragon.jpg'
-import licor from '../assets/licor.jpeg'
 import salute from '../assets/salute.jpg'
 import clubedahorta from '../assets/clubedahorta.jpg'
 import coffeebreak from '../assets/coffeebreak.jpg'
@@ -12,6 +11,8 @@ import kiamore from '../assets/kiamore.png'
 import bigacai from '../assets/bigacai.jpeg'
 import deliciasdobolo from '../assets/deliciasdobolo.jpeg'
 import acaizal from '../assets/acaizal.jpg'
+import acucenaCover from '../assets/acucena/acucena.jpg'
+import acucenaBanner from '../assets/acucena/acucenaBanner.png'
 
 type ApiResponseRestaurant = {
   id: number,
@@ -22,7 +23,8 @@ type ApiResponseRestaurant = {
   photo: string | null,
   categories: Array<Number>,
   isMocambos: boolean,
-  isPremium: boolean
+  isPremium: boolean,
+	banner?: string
 }
 
 export const restaurantsArr: ApiResponseRestaurant[] = [
@@ -261,9 +263,10 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"id" : 22,
 		"name" : "Licor Flor de Açucena",
 		"businessHours" : "Sob encomenda",
-		"instagram" : "licorflordeacucena",
+		"instagram" : "licoracucena",
 		"phone" : "82991260070",
-		"photo" : licor,
+		"photo" : acucenaCover,
+		"banner": acucenaBanner,
 		"categories": [7],
 		"isMocambos": false,
 		"isPremium": true
