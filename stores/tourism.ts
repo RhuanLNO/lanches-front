@@ -2,7 +2,7 @@ import anhumas from '../assets/anhumas.jpg'
 import globo from '../assets/globo.png'
 import seduardo from '../assets/seduardo.jpg'
 import stantonio from '../assets/stantonio.jpg'
-import licor from '../assets/licor.jpeg'
+import licor from '../assets/acucena/acucena.jpg'
 import pousadapalmares from '../assets/pousadapalmares.png'
 
 type ApiResponse = {
@@ -14,7 +14,8 @@ type ApiResponse = {
   photo: string | null,
   categories: Array<Number>,
 	isMocambos: boolean,
-	isPremium: boolean
+	isPremium: boolean,
+	banner?: string
 }
 
 export const tourismArr: ApiResponse[] = [
@@ -143,7 +144,7 @@ export const tourismArr: ApiResponse[] = [
 		"id" : 22,
 		"name" : "Licor Flor de Açucena",
 		"businessHours" : "Sob encomenda",
-		"instagram" : "licorflordeacucena",
+		"instagram" : "licoracucena",
 		"phone" : "82991260070",
 		"photo" : licor,
 		"categories": [4],

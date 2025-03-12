@@ -28,6 +28,24 @@ const props = defineProps({
 
 const loading = ref(false);
 const content = ref<ApiResponse[]>([]);
+const dialog = ref(false);
+const selectedItem = ref<ApiResponse | null>(null);
+const carouselImages = ref<string[]>([]);
+
+const openDetails = (item: ApiResponse) => {
+  selectedItem.value = item;
+  // For the carousel, use the main photo and add placeholder images
+  // In a real implementation, you would fetch additional photos from an API
+  carouselImages.value = [];
+  if (item.photo) {
+    carouselImages.value.push(item.photo);
+  }
+  // Add placeholder images for demonstration
+  carouselImages.value.push(placeholder);
+  carouselImages.value.push(placeholder);
+  
+  dialog.value = true;
+};
 
 const getRestaurants = async () => {
   loading.value = true;
@@ -105,8 +123,10 @@ watch(() => tab.value, getRestaurants, { immediate: true })
                   </v-row>
                 </v-col>
                 <div>Funcionamento: {{ restaurant.businessHours }}</div>
+<!--                 <v-btn class="mt-3 details-btn" :color="props.color" @click="openDetails(restaurant)">
+                  Ver Detalhes
+                </v-btn> -->
               </v-col>
-
             </v-col>
           </v-card-item>
         </v-card>
@@ -123,6 +143,54 @@ watch(() => tab.value, getRestaurants, { immediate: true })
     <v-row v-if="content.length === 0 && !loading" class="mt-15" justify="center">
       <p>Sem resultados para exibir</p>
     </v-row>
+
+    <!-- Details Modal -->
+    <v-dialog v-model="dialog" max-width="800px">
+      <v-card v-if="selectedItem" class="details-modal">
+        <v-card-title class="modal-title">
+          {{ selectedItem.name }}
+          <v-btn icon @click="dialog = false" class="close-btn">
+            <Icon name="mdi:close" class="close-btn-icon" />
+          </v-btn>
+        </v-card-title>
+        
+        <v-card-text>
+          <v-carousel height="400" :show-arrows="true" cycle hide-delimiter-background delimiter-icon="mdi:circle">
+            <v-carousel-item
+              v-for="(image, i) in carouselImages"
+              :key="i"
+              :src="image"
+              cover
+            ></v-carousel-item>
+          </v-carousel>
+          
+          <div class="details-info mt-4">
+            <p><strong>Funcionamento:</strong> {{ selectedItem.businessHours }}</p>
+            <p v-if="selectedItem.phone"><strong>Telefone:</strong> {{ selectedItem.phone }}</p>
+            <p v-if="selectedItem.instagram"><strong>Instagram:</strong> @{{ selectedItem.instagram }}</p>
+          </div>
+          
+          <v-row justify="center" class="mt-4">
+            <a :href="selectedItem.phone ? 'tel:' + selectedItem.phone : undefined">
+              <v-btn class="ma-2" :color="props.color">
+                <Icon name="mdi:phone" style="transform: scale(1.65);" />
+              </v-btn>
+            </a>
+            <a :href="selectedItem.phone ? 'https://wa.me/' + selectedItem.phone : undefined" target="_blank">
+              <v-btn class="ma-2" :color="props.color">
+                <Icon name="mdi:whatsapp" style="transform: scale(1.65);" />
+              </v-btn>
+            </a>
+            <a :href="selectedItem.instagram ? 'https://www.instagram.com/' + selectedItem.instagram : undefined"
+              target="_blank">
+              <v-btn class="ma-2" :color="props.color">
+                <Icon name="mdi:instagram" style="transform: scale(1.65);" />
+              </v-btn>
+            </a>
+          </v-row>
+        </v-card-text>
+      </v-card>
+    </v-dialog>
   </v-container>
 </template>
 
@@ -162,7 +230,6 @@ p {
 }
 
 .photo {
-  object-fit: cover;
   min-height: 360px;
   max-height: 360px;
 }
@@ -187,5 +254,71 @@ p {
   padding: 10px 15px;
   background-color: #7026c8;
   border-radius: 25px;
+}
+
+.details-btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.details-modal {
+  background-color: #212121 !important;
+  color: white !important;
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.close-btn {
+  margin-left: auto;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+
+  .close-btn-icon {
+    transform: scale(1.4);
+  }
+}
+
+.details-info {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.details-info p {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+/* Carousel navigation styling */
+.v-carousel .v-btn--icon {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  color: white !important;
+  transform: scale(1.2);
+}
+
+.v-carousel .v-btn--icon:hover {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Carousel indicators styling */
+.v-carousel .v-carousel__controls {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 8px;
+  border-radius: 20px;
+}
+
+.v-carousel .v-carousel__controls .v-btn {
+  color: white !important;
+  opacity: 0.7;
+  transform: scale(0.8);
+}
+
+.v-carousel .v-carousel__controls .v-btn--active {
+  opacity: 1;
 }
 </style>
