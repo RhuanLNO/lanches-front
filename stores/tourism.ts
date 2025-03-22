@@ -32,14 +32,14 @@ export const tourismArr: ApiResponse[] = [
 	},
 	{
 		"id" : 2,
-		"name" : "Quilombo Park Hotel",
+		"name" : "Quilombo Hotel Fazenda",
 		"businessHours" : "Todos os dias 24 horas",
 		"instagram" : "quilombohotelfazenda",
 		"phone" : "82999893100",
 		"photo" : "https://images.trvl-media.com/lodging/21000000/20050000/20047500/20047453/cb2527c3.jpg",
 		"categories": [1, 3],
 		"isMocambos": false,
-		"isPremium": false
+		"isPremium": true
 	},
 	{
 		"id" : 3,

@@ -13,6 +13,7 @@ import deliciasdobolo from '../assets/deliciasdobolo.jpeg'
 import acaizal from '../assets/acaizal.jpg'
 import acucenaCover from '../assets/acucena/acucena.jpg'
 import acucenaBanner from '../assets/acucena/acucenaBanner.png'
+import quilomboCover from '../assets/quilombo/quilombo.jpg'
 
 type ApiResponseRestaurant = {
   id: number,
@@ -268,6 +269,17 @@ export const restaurantsArr: ApiResponseRestaurant[] = [
 		"photo" : acucenaCover,
 		"banner": acucenaBanner,
 		"categories": [7],
+		"isMocambos": false,
+		"isPremium": true
+	},
+	{
+		"id" : 23,
+		"name" : "Quilombo Hotel Fazenda",
+		"businessHours" : "Todos os dias 08:00 - 22:00",
+		"instagram" : "quilombohotelfazenda",
+		"phone" : "82999893100",
+		"photo" : quilomboCover,
+		"categories": [],
 		"isMocambos": false,
 		"isPremium": true
 	},
