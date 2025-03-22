@@ -123,9 +123,9 @@ watch(() => tab.value, getRestaurants, { immediate: true })
                   </v-row>
                 </v-col>
                 <div>Funcionamento: {{ restaurant.businessHours }}</div>
-                <v-btn class="mt-3 details-btn" :color="props.color" @click="openDetails(restaurant)">
+<!--                 <v-btn class="mt-3 details-btn" :color="props.color" @click="openDetails(restaurant)">
                   Ver Detalhes
-                </v-btn>
+                </v-btn> -->
               </v-col>
             </v-col>
           </v-card-item>
